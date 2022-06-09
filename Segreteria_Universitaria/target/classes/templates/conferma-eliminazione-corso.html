@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		
+			<h2>Sei sicuro di voler eliminare questo Corso di Laurea?</h2>
+			<hr/>
+			
+			<form th:action="@{/elimina-corso}" th:object="${corso}" method="get">
+				<br>
+				<button type="submit" class="btn btn-primary col-2">Elimina</button>
+			</form>
+			<hr/>
+			<a th:href="@{/elenco-corsi}">Torna all'elenco corsi</a>
+			<br>
+			<a th:href="@{/home-page}"> Torna alla Home</a>
+</body>
+</html>

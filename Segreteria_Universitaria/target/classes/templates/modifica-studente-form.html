@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Modifica Studente</title>
+</head>
+<body style="text-align:center;">
+	<div class="container">
+		
+			<h1 style="text-align:center;">Modifica Studente</h1>
+			<hr/>
+			
+			<form th:action="@{/salvaStudente}" th:object="${studente}" method="POST" style="text-align:center;">
+				<br>
+				<br>
+				<input type="text" th:field="*{matricola}" class="form-control col-4 mb-4" placeholder="Matricola" readonly="readonly" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="text" th:field="*{nome}" class="form-control col-4 mb-4" placeholder="Nome" style="text-align:center;" />
+				<br>
+				<br>
+				<input type="text" th:field="*{cognome}" class="form-control col-4 mb-4" placeholder="Cognome" style="text-align:center;" />
+				<br>
+				<br>
+				<input type="date" th:field="*{dataN}" class="form-control col-4 mb-4" placeholder="" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="email" th:field="*{email}" class="form-control col-4 mb-4" placeholder="Email" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="text" th:field="*{indirizzoR}" class="form-control col-4 mb-4" placeholder="Indirizzo di Residenza" style="text-align:center;" />
+				<br>
+				<br>
+				<input type="text" th:field="*{cittaR}" class="form-control col-4 mb-4" placeholder="Città di Residenza" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="text" th:field="*{corsoDiLaurea}" class="form-control col-4 mb-4" placeholder="Codice Corso di Laurea" style="text-align:center;"/>
+				<br>
+				<br>
+				<button type="submit" class="btn btn-primary col-2">Modifca</button>
+				
+				
+			</form>
+			<hr/>
+			<a th:href="@{/elenco-studenti}">Torna all'elenco Studenti</a>
+			<br>
+			<br>
+			<a th:href="@{/home-page}"> Torna alla Home</a>
+	</div>
+</body>
+</html>

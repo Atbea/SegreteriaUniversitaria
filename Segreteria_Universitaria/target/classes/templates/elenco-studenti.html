@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Elenco Studenti</title>
+
+<style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #afeeee;
+}
+</style>
+
+</head>
+<body style="text-align:center;">
+	<div class="container">
+		
+			<h1 style="text-align:center;">Elenco Studenti</h1>
+			
+			<hr/>
+		
+			<br/><br/>
+			<table class="table table-bordered table-striped" id="elencoStudentiTable" style="width:100%">
+			
+				<thead>
+					<tr style="height:50px">
+						<th>Matricola</th>
+						<th>Nome</th>
+						<th>Cognome</th>
+						<th>Data di Nascita</th>
+						<th>Email</th>
+						<th>Indirizzo di Residenza</th>
+						<th>Città di Residenza</th>
+						<th>Corso di Laurea</th>
+					</tr>
+				</thead>
+				<br/>
+				<tbody>
+					<tr th:each="studente: ${allStudenti}" style="height:50px">
+						<td th:text="${studente.matricola}" />
+						<td th:text="${studente.nome}" />
+						<td th:text="${studente.cognome}" />
+						<td th:text="${studente.dataN}" />
+						<td th:text="${studente.email}" />
+						<td th:text="${studente.indirizzoR}" />
+						<td th:text="${studente.cittaR}" />
+						<td th:text="${studente.corsoDiLaurea.codice}" />
+						<td th:text="${studente.corsoDiLaurea.nome}" />
+						<td>
+							<a th:href="@{'/modifica-studente-form/' + ${studente.matricola}}" >Modifica</a>
+							
+							<a th:href="@{'/elimina-studente/' + ${studente.matricola}}" >Elimina</a>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			<br/>
+			<a th:href="@{/inserisciStudenteForm}" >Inserisci Studente</a>
+			<br/>
+			<br/>
+			<a th:href="@{/home-page}"> Torna alla Home</a>
+		</div>
+</body>
+</html>

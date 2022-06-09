@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Elenco Corsi di Laurea</title>
+
+ 
+
+<style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #afeeee;
+}
+</style>
+
+</head>
+<body style="text-align:center;">
+	<div class="container">
+		
+			<h1 style="text-align:center;">Elenco Corsi di Laurea</h1>
+			
+			<hr/>
+		
+			<br/><br/>
+			<table class="table table-bordered table-striped" id="elencoCorsiTable" style="width:100%">
+			
+				<thead>
+					<tr style="height:50px">
+						<th>Codice</th>
+						<th>Nome</th>
+						<th>Indirizzo</th>
+						<th>Numero Esami</th>
+					</tr>
+				</thead>
+				<br/>
+				<tbody>
+					<tr th:each="corsoDiLaurea: ${allCorsi}" style="height:50px">
+						<td th:text="${corsoDiLaurea.codice}" />
+						<td th:text="${corsoDiLaurea.nome}" />
+						<td th:text="${corsoDiLaurea.indirizzo}" />
+						<td th:text="${corsoDiLaurea.numEsami}" />
+						<td>
+							<a th:href="@{'/modifica-corso-form/' + ${corsoDiLaurea.codice}}" >Modifica</a>
+							
+							<a th:href="@{'/elimina-corso/' + ${corsoDiLaurea.codice}}" >Elimina</a>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			<br/>
+			<a th:href="@{/inserisciCorsoForm}" >Inserisci Corso di Laurea</a>
+			<br/>
+			<br/>
+			<a th:href="@{/home-page}"> Torna alla Home</a>
+		</div>
+</body>
+</html>

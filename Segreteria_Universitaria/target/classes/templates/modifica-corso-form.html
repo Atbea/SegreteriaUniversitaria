@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Modifica Corso di Laurea</title>
+</head>
+<body style="text-align:center;">
+	<div class="container">
+		
+			<h1 style="text-align:center;">Modifica Corso di Laurea</h1>
+			<hr/>
+			
+			<form th:action="@{/salvaCorso}" th:object="${corso}" method="POST" style="text-align:center;">
+				<br>
+				<input type="text" th:field="*{codice}" class="form-control col-4 mb-4" placeholder="Matricola" readonly="readonly" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="text" th:field="*{nome}" class="form-control col-4 mb-4" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="text" th:field="*{indirizzo}" class="form-control col-4 mb-4" style="text-align:center;"/>
+				<br>
+				<br>
+				<input type="text" th:field="*{numEsami}" class="form-control col-4 mb-4" style="text-align:center;" />
+				<br>
+				<br>
+				<button type="submit" class="btn btn-primary col-2">Modifca</button>
+				
+				
+			</form>
+			<hr/>
+			<a th:href="@{/elenco-corsi}">Torna all'elenco corsi</a>
+			<br>
+			<br>
+			<a th:href="@{/home-page}"> Torna alla Home</a>
+	</div>
+</body>
+</html>
